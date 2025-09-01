@@ -45,14 +45,14 @@ data["Suggestion"] = suggestions
 # ----------------------------
 # 3. Streamlit Web Interface
 # ----------------------------
-st.title("🚐 Matatu Demand vs Supply Analysis")
+st.title("Matatu Demand vs Supply Analysis")
 st.write("This app simulates matatu passenger demand and capacity across routes, and suggests reallocation.")
 
 # Show table
 st.dataframe(data)
 
 # Bar chart: Demand vs Capacity
-st.subheader("📊 Passenger Demand vs Capacity")
+st.subheader("Passenger Demand vs Capacity")
 fig, ax = plt.subplots()
 bar_width = 0.35
 x = np.arange(len(routes))
@@ -65,6 +65,7 @@ ax.legend()
 st.pyplot(fig)
 
 # Download results
-st.subheader("⬇️ Download Analysis")
+st.subheader("Download Analysis")
 csv = data.to_csv(index=False).encode("utf-8")
 st.download_button("Download CSV", csv, "matatu_analysis.csv", "text/csv")
+
